@@ -4,6 +4,7 @@ import theme from '@/styles/theme';
 export const HistoryList = styled.div`
   svg {
     width: ${theme.length.lg};
+    color: ${theme.color.brandThirdColor};
   }
 `;
 
