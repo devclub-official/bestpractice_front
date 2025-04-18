@@ -22,8 +22,12 @@ const SearchForm = () => {
         <LabelInput label="프레임워크" />
         <LabelInput label="파일 포맷" />
         <LabelInput label="기능" />
-        <button onClick={handleSubmit}>전송</button>
+        <LabelInput label="언어" />
+        <LabelInput label="프레임워크" />
+        <LabelInput label="파일 포맷" />
+        <LabelInput label="기능" />
       </Styled.Form>
+      <Styled.StyledButton onClick={handleSubmit}>전송</Styled.StyledButton>
     </Styled.Wrapper>
   );
 };
