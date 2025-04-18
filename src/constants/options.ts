@@ -1,6 +1,6 @@
 export const LANGUAGES = ['JavaScript', 'Python', 'JAVA'];
 export const FRAMEWORKS = ['React', 'Spring', 'Django'];
-export const FILE_FORMATS = ['.yml', '.properties', '.py', '.json'];
+export const FILE_FORMATS = ['yml', 'properties', 'py', 'json'];
 
 export const FUNCTION_OPTIONS = {
   auth: ['JWT 인증', 'OAuth2 인증', '세션 기반 인증'],

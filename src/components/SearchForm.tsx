@@ -5,10 +5,12 @@ import { useSearchFormState } from '@/hooks/useSearchFormState';
 import { FILE_FORMATS, FRAMEWORKS, FUNCTION_LABELS, FUNCTION_OPTIONS, LANGUAGES } from '@/constants/options';
 
 import * as Styled from './SearchForm.styles';
+import { useEffect, useState } from 'react';
 
 const SearchForm = () => {
-  const { mutate: search } = useSearchMutation();
-
+  const { mutate: search, data } = useSearchMutation();
+  const [isSearched, setIsSearched] = useState(false)
+console.log('data', data)
   const {
     radios: { language, framework, fileFormat },
     selectRadios,
@@ -24,10 +26,14 @@ const SearchForm = () => {
       selected_options: selectedOptions,
     });
   };
-
+  useEffect(()=>{
+    if(data){
+      setIsSearched(true)
+    }
+  },[data])
   return (
     <Styled.Wrapper>
-      <Styled.Form>
+      {!isSearched && <Styled.Form>
         <LabelInput label="언어">
           <div style={{ display: 'flex', gap: '1.2rem' }}>
             {LANGUAGES.map((lang) => (
@@ -57,8 +63,8 @@ const SearchForm = () => {
                 <input
                   type="radio"
                   name="fileFormat"
-                  value={format}
-                  checked={fileFormat === format}
+                  value={'json'}
+                  // checked={fileFormat === format}
                   onChange={selectRadios}
                 />
                 <span>{format}</span>
@@ -81,8 +87,13 @@ const SearchForm = () => {
             ))}
           </div>
         </LabelInput>
-      </Styled.Form>
-      <Styled.StyledButton onClick={handleSubmit}>전송</Styled.StyledButton>
+      </Styled.Form>}
+      {isSearched && <Styled.ScreenContainer>
+          {/* data?.data?.content.replace(r'\\u[0-9a-fA-F]{4}', '') */}
+          <pre>{JSON.stringify(data?.data?.content.replace('\\u[0-9a-fA-F]{4}', ''), null, 2)}</pre>
+        </Styled.ScreenContainer>}
+      {!isSearched && <Styled.StyledButton onClick={handleSubmit}>생성</Styled.StyledButton>}
+        {isSearched &&<Styled.StyledButton onClick={()=>setIsSearched(!isSearched)}>다시하기</Styled.StyledButton> }
     </Styled.Wrapper>
   );
 };

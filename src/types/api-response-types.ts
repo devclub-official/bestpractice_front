@@ -26,7 +26,7 @@ export interface ConfigResponse {
   framework: string;
   features: string;
   file_format: string;
-  content: string;
+  content: any;
   finename: string;
   mime_type: string;
   created_at: string;

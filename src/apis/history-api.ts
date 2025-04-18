@@ -5,5 +5,7 @@ import { client } from './client';
 
 export const fetchHistory = async () => client.get<History[]>('/api/config-history/');
 
-export const fetchHistoryList = async (data: HistoryRequest) =>
-  client.post<ConfigResponse>('/api/generate-config/', data);
+export const fetchHistoryList = async (data: HistoryRequest) =>{
+  const res =  await client.post<ConfigResponse>('/api/generate-config/', data);
+  return res
+}

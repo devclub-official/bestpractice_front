@@ -38,3 +38,15 @@ export const InputWrapper = styled.div`
   gap: 0.4rem;
   margin-top: 0.8rem;
 `;
+
+
+export const ScreenContainer = styled.div`
+margin: auto;
+overflow: auto;
+display:flex;
+flex-wrap:wrap;
+  width: 500px;
+  height: 500px;
+  background-color: #000;
+  color: #fff;
+`
