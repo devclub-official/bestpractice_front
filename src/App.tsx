@@ -1,10 +1,7 @@
-import { useHistory } from './hooks/useHistoryList';
+import Layout from './components/Layout';
 
 function App() {
-  const data = useHistory();
-  console.log(data);
-
-  return <>Main</>;
+  return <Layout />;
 }
 
 export default App;
