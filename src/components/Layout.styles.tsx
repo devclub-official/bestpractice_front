@@ -28,13 +28,14 @@ export const Main = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 3rem 0;
   }
 
   .title {
     font-size: ${theme.fontSize.bigTitle};
     color: ${theme.color.brandColor};
     font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
   }
 
   .details {

@@ -24,4 +24,17 @@ export const StyledButton = styled.button`
   color: ${theme.color.white};
   border: none;
   border-radius: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.15s ease-out;
+  }
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
 `;
