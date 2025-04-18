@@ -11,15 +11,6 @@
 
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "importOrder": [
-    "^react(.*)$",
-    "<THIRD_PARTY_MODULES>",
-    "^@/components/(.*)$",
-    "^@/utils/(.*)$",
-    "^[./]"
-  ],
-  "plugins": [
-    "@trivago/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss"
-  ]
+  "importOrder": ["^react(.*)$", "<THIRD_PARTY_MODULES>", "^@/components/(.*)$", "^@/utils/(.*)$", "^[./]"],
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
