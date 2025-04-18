@@ -1,13 +1,13 @@
 import LabelInput from './LabelInput';
 
+import { useSearchMutation } from '@/hooks/useSearchMutation';
 import { useSearchFormState } from '@/hooks/useSearchFormState';
-import { useSelectHistoryMutation } from '@/hooks/useSelectHistoryMutation';
 import { FILE_FORMATS, FRAMEWORKS, FUNCTION_LABELS, FUNCTION_OPTIONS, LANGUAGES } from '@/constants/options';
 
 import * as Styled from './SearchForm.styles';
 
 const SearchForm = () => {
-  const { mutate: selectHistory } = useSelectHistoryMutation();
+  const { mutate: search } = useSearchMutation();
 
   const {
     radios: { language, framework, fileFormat },
@@ -17,15 +17,13 @@ const SearchForm = () => {
   } = useSearchFormState();
 
   const handleSubmit = () => {
-    selectHistory({
+    search({
       language,
       framework,
       file_format: fileFormat,
       selected_options: selectedOptions,
     });
   };
-
-  console.log({ language, framework, fileFormat }, selectedOptions);
 
   return (
     <Styled.Wrapper>

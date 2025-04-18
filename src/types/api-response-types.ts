@@ -1,13 +1,23 @@
-export interface HistoryItem {
+export type HistoryContent = {
+  text_content: string;
+  format: '.yaml' | '.json' | '.properties' | '.py';
+};
+
+export interface History {
   id: number;
+  content: HistoryContent;
   language: string;
   framework: string;
-  features: string[]; // 문자열 배열로 파싱 필요
+  selected_options: {
+    auth: string;
+    database: string;
+    logging: boolean;
+  };
   file_format: string;
-  content: string; // 문자열 내부에 JSON 코드가 포함되어 있음
+  filename: string;
+  mime_type: string;
   created_at: string;
   is_bookmarked: boolean;
-  bookmark_count: number;
   title: string | null;
 }
 
