@@ -10,7 +10,13 @@ const Layout = () => {
         <SearchHistoryList />
       </Styled.SideBar>
       <Styled.Main>
-        <SearchForm />
+        <div>
+          <span className="title">Best Practice</span>
+          <span>나만의 Best Practice를 발견하세요.</span>
+        </div>
+        <Styled.FormSection>
+          <SearchForm />
+        </Styled.FormSection>
       </Styled.Main>
     </Styled.Layout>
   );
