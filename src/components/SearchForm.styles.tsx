@@ -15,7 +15,7 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 2.4rem;
   overflow: auto;
-  height: 50rem;
+  height: 70rem;
 `;
 
 export const StyledButton = styled.button`
@@ -39,14 +39,13 @@ export const InputWrapper = styled.div`
   margin-top: 0.8rem;
 `;
 
-
 export const ScreenContainer = styled.div`
-margin: auto;
-overflow: auto;
-display:flex;
-flex-wrap:wrap;
+  margin: auto;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
   width: 500px;
   height: 500px;
   background-color: #000;
   color: #fff;
-`
+`;
